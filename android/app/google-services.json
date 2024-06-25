@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "52139565225",
+    "project_id": "colorex-37fd5",
+    "storage_bucket": "colorex-37fd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52139565225:android:28fb37d2e38f20873489b8",
+        "android_client_info": {
+          "package_name": "com.ai_its.colorex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52139565225-cumfo64adrp0uooqp7csqsa5tjgkqvnj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ai_its.colorex",
+            "certificate_hash": "962fa08143fad9d5c10d820cce62ea6d94b0a598"
+          }
+        },
+        {
+          "client_id": "52139565225-qpj5uedg6d00e35qbc75vqpk14jgakkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQTevNGZbPGYM2JN-cRV6y194oNI9du-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52139565225-qpj5uedg6d00e35qbc75vqpk14jgakkl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "52139565225-lketego5r5os9domvjnvjjef1gpan579.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.colorex"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52139565225:android:5c1575f5f9b49ab23489b8",
+        "android_client_info": {
+          "package_name": "com.example.colorex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52139565225-otiv7kos5ie85c4nfth8olta6kr7lbm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.colorex",
+            "certificate_hash": "962fa08143fad9d5c10d820cce62ea6d94b0a598"
+          }
+        },
+        {
+          "client_id": "52139565225-qpj5uedg6d00e35qbc75vqpk14jgakkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQTevNGZbPGYM2JN-cRV6y194oNI9du-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52139565225-qpj5uedg6d00e35qbc75vqpk14jgakkl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "52139565225-lketego5r5os9domvjnvjjef1gpan579.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.colorex"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
