@@ -1,18 +1,25 @@
 import 'package:colorex/homepage/subpages/subsubpages/post.dart';
+import 'package:colorex/homepage/subpages/subsubpages/review.dart';
 import 'package:colorex/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class MyProfilePage extends StatelessWidget {
+class MyProfilePage extends StatefulWidget {
   const MyProfilePage({super.key});
 
+  @override
+  State<MyProfilePage> createState() => _MyProfilePageState();
+}
+
+class _MyProfilePageState extends State<MyProfilePage> {
+  int currentPage = 0;
   @override
   Widget build(context) {
     return SingleChildScrollView(
       child: Column(
         children: [
           profileBanner(context),
-          const PostPage(),
+          widgetSwitch(),
         ],
       ),
     );
@@ -48,7 +55,7 @@ class MyProfilePage extends StatelessWidget {
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.only(
-                      bottom: 9, left: 36, right: 36, top: 9),
+                      bottom: 6, left: 36, right: 36, top: 9),
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(6))),
@@ -104,35 +111,74 @@ class MyProfilePage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            children: [
-                              Center(
-                                child: Text(postCount.toString()),
-                              ),
-                              const Center(
-                                child: Text('postingan'),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () => changeWidget(0),
+                            child: Column(
+                              children: [
+                                Center(
+                                  child: Text(postCount.toString()),
+                                ),
+                                const Center(
+                                  child: Text('postingan'),
+                                ),
+                                const SizedBox(height: 4),
+                                currentPage == 0
+                                    ? Container(
+                                        color: Theme.of(context).primaryColor,
+                                        width: 60,
+                                        height: 3,
+                                      )
+                                    : const SizedBox(
+                                        height: 3,
+                                      )
+                              ],
+                            ),
                           ),
-                          Column(
-                            children: [
-                              Center(
-                                child: Text(reviewCount.toString()),
-                              ),
-                              const Center(
-                                child: Text('ulasan'),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () => changeWidget(1),
+                            child: Column(
+                              children: [
+                                Center(
+                                  child: Text(reviewCount.toString()),
+                                ),
+                                const Center(
+                                  child: Text('ulasan'),
+                                ),
+                                const SizedBox(height: 4),
+                                currentPage == 1
+                                    ? Container(
+                                        color: Theme.of(context).primaryColor,
+                                        width: 60,
+                                        height: 3,
+                                      )
+                                    : const SizedBox(
+                                        height: 3,
+                                      )
+                              ],
+                            ),
                           ),
-                          Column(
-                            children: [
-                              Center(
-                                child: Text(followerCount.toString()),
-                              ),
-                              const Center(
-                                child: Text('pengikut'),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () => changeWidget(2),
+                            child: Column(
+                              children: [
+                                Center(
+                                  child: Text(followerCount.toString()),
+                                ),
+                                const Center(
+                                  child: Text('pengikut'),
+                                ),
+                                const SizedBox(height: 4),
+                                currentPage == 2
+                                    ? Container(
+                                        color: Theme.of(context).primaryColor,
+                                        width: 60,
+                                        height: 3,
+                                      )
+                                    : const SizedBox(
+                                        height: 3,
+                                      )
+                              ],
+                            ),
                           )
                         ],
                       )
@@ -191,5 +237,21 @@ class MyProfilePage extends StatelessWidget {
             ))
       ],
     );
+  }
+
+  void changeWidget(int index) {
+    setState(() {
+      currentPage = index;
+    });
+  }
+
+  Widget widgetSwitch() {
+    if (currentPage == 0) {
+      return const PostPage();
+    } else if (currentPage == 1) {
+      return const ReviewPage();
+    } else {
+      return Container();
+    }
   }
 }
