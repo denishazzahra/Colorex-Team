@@ -1,3 +1,4 @@
+import 'package:colorex/editprofilepage/editprofile.dart';
 import 'package:colorex/homepage/subpages/subsubpages/post.dart';
 import 'package:colorex/homepage/subpages/subsubpages/review.dart';
 import 'package:colorex/model/user.dart';
@@ -222,7 +223,9 @@ class _MyProfilePageState extends State<MyProfilePage> {
             height: 32,
             width: 60,
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                goToEdit();
+              },
               shape: const BeveledRectangleBorder(
                   side: BorderSide(width: 0.5),
                   borderRadius: BorderRadius.all(Radius.circular(3))),
@@ -253,5 +256,10 @@ class _MyProfilePageState extends State<MyProfilePage> {
     } else {
       return Container();
     }
+  }
+
+  void goToEdit() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const EditProfile()));
   }
 }

@@ -206,7 +206,7 @@ class _ReviewPageState extends State<ReviewPage> {
       runSpacing: 6,
       children: tags.asMap().values.map((tag) {
         return Container(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             color: Colors.grey[200],
@@ -240,12 +240,10 @@ class _ReviewPageState extends State<ReviewPage> {
             const SizedBox(width: 16),
             SvgPicture.asset(
               'assets/svg/Chat.svg',
-              fit: BoxFit.contain,
               colorFilter:
                   const ColorFilter.mode(Color(0xFF3C3C3C), BlendMode.srcIn),
               height: 20,
               width: 24,
-              // width: 24,
             ),
             const SizedBox(width: 2),
             Text(
