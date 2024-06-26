@@ -2,7 +2,9 @@ import 'package:colorex/widget/costum_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
+import '../model/user.dart';
 import '../questionpage/widgets/widgets.dart';
 
 class EditProfile extends StatefulWidget {
@@ -24,14 +26,18 @@ class _EditProfileState extends State<EditProfile> {
     "Biru",
     "Lainnya"
   ];
-  String selectedSkinUndertone = 'Warm';
-  String selectedEyeColor = 'Cokelat Tua';
+  List<dynamic> answers = List.generate(5, (index) => '');
   TextEditingController nameController = TextEditingController();
   TextEditingController genderController = TextEditingController();
   TextEditingController birthdayController = TextEditingController();
   late DateTime selectedDate;
   @override
   Widget build(BuildContext context) {
+    final userDataProvider = Provider.of<MyUserData>(context);
+    answers[0] = answers[0] == '' ? userDataProvider.displayName : answers[0];
+    answers[3] = answers[3] == '' ? 'Warm' : answers[3];
+    answers[4] = answers[4] == '' ? 'Cokelat tua' : answers[4];
+    nameController.text = answers[0];
     selectedDate = parsedDate(birthdayController.text);
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
@@ -87,19 +93,26 @@ class _EditProfileState extends State<EditProfile> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   label("Nama"),
-                  textBox(nameController, '', false, false, null, 0, () {}),
+                  textBox(
+                      nameController, '', false, false, null, 0, updateAnswer),
 
                   label("Gender"),
-                  dropdown(genders, genderController, 1, () {}),
+                  dropdown(genders, genderController, 1, updateAnswer),
                   label("Tanggal Lahir"),
-                  textBox(birthdayController, 'DD/MM/YYYY', true, false,
-                      () => _selectDate(context), 2, () {}), // Fixing onTap
+                  textBox(
+                      birthdayController,
+                      'DD/MM/YYYY',
+                      true,
+                      false,
+                      () => _selectDate(context),
+                      2,
+                      updateAnswer), // Fixing onTap
                   label("Undertone"),
-                  buttonGroupContainer(skinUndertones, selectedSkinUndertone,
-                      'Undertone', 3, () {}),
+                  buttonGroupContainer(
+                      skinUndertones, answers[3], 'Undertone', 3, updateAnswer),
                   label("Warna Mata"),
                   buttonGroupContainer(
-                      eyeColors, selectedEyeColor, 'Eye', 4, () {}),
+                      eyeColors, answers[4], 'Eye', 4, updateAnswer),
                 ],
               ),
               const SizedBox(height: 24),
@@ -148,6 +161,7 @@ class _EditProfileState extends State<EditProfile> {
       setState(() {
         birthdayController.text = formattedDate(picked);
         selectedDate = picked;
+        updateAnswer(birthdayController.text, 2);
       });
     }
   }
@@ -162,5 +176,17 @@ class _EditProfileState extends State<EditProfile> {
     } catch (e) {
       return DateTime.now();
     }
+  }
+
+  void updateAnswer(dynamic value, dynamic index) {
+    setState(() {
+      if (value == 1) {
+        answers[value] = index;
+      } else {
+        answers[index] = value;
+      }
+
+      print(answers);
+    });
   }
 }
