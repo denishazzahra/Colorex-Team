@@ -16,14 +16,7 @@ class _EditProfileState extends State<EditProfile> {
   final String vectorColorex = "lib/homepage/asset/svg/Vector_Colorex.svg";
   final DateTime today = DateTime.now();
   final List<String> genders = ["Perempuan", "Laki-laki"];
-  final List<String> hairColors = [
-    "Hitam",
-    "Cokelat tua",
-    "Cokelat muda",
-    "Merah",
-    "Blonde",
-    "Lainnya"
-  ];
+  final List<String> skinUndertones = ["Warm", "Neutral", "Cool"];
   final List<String> eyeColors = [
     "Cokelat tua",
     "Cokelat muda",
@@ -31,13 +24,11 @@ class _EditProfileState extends State<EditProfile> {
     "Biru",
     "Lainnya"
   ];
-  String selectedHairColor = 'Hitam';
+  String selectedSkinUndertone = 'Warm';
   String selectedEyeColor = 'Cokelat Tua';
   TextEditingController nameController = TextEditingController();
   TextEditingController genderController = TextEditingController();
   TextEditingController birthdayController = TextEditingController();
-  TextEditingController heightController = TextEditingController();
-  late String selectedSkinUndertone;
   late DateTime selectedDate;
   @override
   Widget build(BuildContext context) {
@@ -103,9 +94,9 @@ class _EditProfileState extends State<EditProfile> {
                   label("Tanggal Lahir"),
                   textBox(birthdayController, 'DD/MM/YYYY', true, false,
                       () => _selectDate(context), 2, () {}), // Fixing onTap
-                  label("Warna Rambut Saat Ini"),
-                  buttonGroupContainer(
-                      hairColors, selectedHairColor, 'Hair', 3, () {}),
+                  label("Undertone"),
+                  buttonGroupContainer(skinUndertones, selectedSkinUndertone,
+                      'Undertone', 3, () {}),
                   label("Warna Mata"),
                   buttonGroupContainer(
                       eyeColors, selectedEyeColor, 'Eye', 4, () {}),
