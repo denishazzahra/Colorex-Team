@@ -6,6 +6,7 @@ import 'package:colorex/widget/costum_button.dart';
 
 import 'package:colorex/widget/costum_background2.dart';
 
+import '../../pembayaranpage/pembayaran.dart';
 import '../../questionpage/questionpage.dart';
 
 class MyAutumnResultPage extends StatelessWidget {
@@ -387,7 +388,7 @@ class MyAutumnResultPage extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const QuestionPage()));
+                                                    PembayaranPage()));
                                       },
                                     ),
                                   ),

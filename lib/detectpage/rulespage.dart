@@ -10,11 +10,11 @@ import 'package:tflite_v2/tflite_v2.dart';
 import 'package:face_camera/face_camera.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
+import '../pembayaranpage/pembayaran.dart';
 import 'resultpage/autumnresult.dart';
 import 'resultpage/winterresult.dart';
 import 'resultpage/springresult.dart';
 import 'resultpage/summerresult.dart';
-
 
 class MyDetectRulesPage extends StatefulWidget {
   const MyDetectRulesPage({super.key});
@@ -190,15 +190,15 @@ class _MyDetectRulesPageState extends State<MyDetectRulesPage> {
 
 Widget _message(String msg) => Padding(
       padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15),
-      child: Text(msg,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-              fontFamily: 'LeagueSpartan',
-              fontSize: 14, 
-              height: 1.5, 
-              fontWeight: FontWeight.w400
-            ),
-          ),
+      child: Text(
+        msg,
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+            fontFamily: 'LeagueSpartan',
+            fontSize: 14,
+            height: 1.5,
+            fontWeight: FontWeight.w400),
+      ),
     );
 
 class MyRulesPage extends StatelessWidget {
@@ -243,7 +243,9 @@ class MyRulesPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
-              const SizedBox(height: 12,),
+              const SizedBox(
+                height: 12,
+              ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -252,86 +254,85 @@ class MyRulesPage extends StatelessWidget {
                     child: Text(
                       "Rules",
                       style: TextStyle(
-                        fontFamily: 'LeagueSpartan',
-                        fontSize: 28, 
-                        height: 1.5, 
-                        fontWeight: FontWeight.w700
-                      ),
+                          fontFamily: 'LeagueSpartan',
+                          fontSize: 28,
+                          height: 1.5,
+                          fontWeight: FontWeight.w700),
                     ),
                   )
                 ],
               ),
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "1.  ",
                     style: TextStyle(
-                      fontFamily: 'LeagueSpartan',
-                      fontSize: 18, 
-                      fontWeight: FontWeight.w500
-                    ),
+                        fontFamily: 'LeagueSpartan',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
                   ),
                   Expanded(
                     child: Text(
                       "Patikan kamu berada di tempat yang terang",
                       overflow: TextOverflow.clip,
                       style: TextStyle(
-                        fontFamily: 'LeagueSpartan',
-                        fontSize: 18, 
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'LeagueSpartan',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 12,),
+              const SizedBox(
+                height: 12,
+              ),
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "2.  ",
                     style: TextStyle(
-                      fontFamily: 'LeagueSpartan',
-                      fontSize: 18, 
-                      fontWeight: FontWeight.w500
-                    ),
+                        fontFamily: 'LeagueSpartan',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
                   ),
                   Expanded(
                     child: Text(
                       "Pastikan wajahmu tidak tertutup oleh kacamata, rambut atau aksesoris lainnya",
                       overflow: TextOverflow.clip,
                       style: TextStyle(
-                        fontFamily: 'LeagueSpartan',
-                        fontSize: 18, 
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'LeagueSpartan',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 12,),
+              const SizedBox(
+                height: 12,
+              ),
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "3.  ",
                     style: TextStyle(
-                      fontFamily: 'LeagueSpartan',
-                      fontSize: 18, 
-                      fontWeight: FontWeight.w500
-                    ),
+                        fontFamily: 'LeagueSpartan',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
                   ),
                   Expanded(
                     child: Text(
                       "Mohon untuk tidak bergerak saat pengambilan foto wajah",
                       overflow: TextOverflow.clip,
                       style: TextStyle(
-                        fontFamily: 'LeagueSpartan',
-                        fontSize: 18, 
-                        fontWeight: FontWeight.w500
-                      ),
+                          fontFamily: 'LeagueSpartan',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],
@@ -340,9 +341,10 @@ class MyRulesPage extends StatelessWidget {
               MyCostumButtton1(
                   buttonColor: Colors.white,
                   buttonText: "Continue",
-                  func: func
-              ),
-              const SizedBox(height: 24,)
+                  func: func),
+              const SizedBox(
+                height: 24,
+              )
             ],
           ),
         ),

@@ -80,6 +80,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/g_logo.png
+    - assets/img/qrcode.jpg
     - assets/svg/apple_icon.svg
     - assets/svg/Olo_Olo.svg
     - assets/svg/Olo_Olo_Flip.svg

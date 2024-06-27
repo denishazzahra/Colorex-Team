@@ -5,6 +5,8 @@ import 'package:colorex/widget/costum_button.dart';
 
 import 'package:colorex/widget/costum_background2.dart';
 
+import '../../pembayaranpage/pembayaran.dart';
+
 class MyWinterResultPage extends StatelessWidget {
   const MyWinterResultPage({super.key});
   final String vectorColorex = "lib/homepage/asset/svg/Vector_Colorex.svg";
@@ -406,7 +408,7 @@ class MyWinterResultPage extends StatelessWidget {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const QuestionPage()));
+                                                    PembayaranPage()));
                                       },
                                     ),
                                   ),
